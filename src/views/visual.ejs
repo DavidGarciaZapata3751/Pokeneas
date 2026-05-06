@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokeneas de Antioquia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/visual.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="/">Pokeneas</a>
+    <a class="navbar-link" href="/visual">Pokenédex</a>
+    <a class="navbar-link" href="/api/pokenea">API JSON</a>
+  </nav>
+
+  <main class="page-content">
+
+    <h1 class="page-title">Pokenédex de Antioquia</h1>
+    <div class="card">
+      <span class="pokenea-number">N.º <%= String(pokenea.id).padStart(3, '0') %></span>
+
+      <img
+        class="pokenea-image"
+        src="<%= pokenea.imagen %>"
+        alt="Imagen de <%= pokenea.nombre %>"
+      />
+
+      <div class="pokenea-name"><%= pokenea.nombre %></div>
+
+      <div class="badges">
+        <span class="badge badge-habilidad"><%= pokenea.habilidad %></span>
+      </div>
+    </div>
+
+    <div class="phrase-section">
+      <div class="phrase-label">Frase Filosófica</div>
+      <p class="phrase-text">"<%= pokenea.fraseFilosofica %>"</p>
+    </div>
+    <div class="badges">
+      <span class="badge badge-container">Contenedor: <%= containerId %></span>
+    </div>
+
+    <a class="btn-surprise" href="/visual">Otro Pokenea</a>
+
+  </main>
+
+  <footer class="footer">
+    Pokeneas de Antioquia &copy; 2025
+  </footer>
+
+</body>
+</html>
