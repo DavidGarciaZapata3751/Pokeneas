@@ -1,12 +1,10 @@
-const pokeneas = require("../data/pokeneas");
-const os = require("os");
+const pokeneaService = require("../services/pokenea.service");
 
 const getPokeneaVisual = (req, res) => {
-  const randomIndex = Math.floor(Math.random() * pokeneas.length);
-  const pokenea = pokeneas[randomIndex];
-  const containerId = os.hostname();
+  const { pokenea, containerId } = pokeneaService.getRandomPokenea();
 
   res.render("visual", { pokenea, containerId });
 };
 
 module.exports = { getPokeneaVisual };
+
